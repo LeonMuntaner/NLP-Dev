@@ -1,0 +1,90 @@
+---
+title: Notes
+author: Leo Muntaner
+format: html
+jupyter: python3
+---
+
+## Transfer Learning 
+
+Transfer learning is made of two components: 
+
+1. pre-training 
+
+2. fine-tuning
+
+Now the starting point is the model architecture and all of the weights of the parameters are random.
+
+* No knowledge of language 
+
+I then pre-train the model. This pre-training piece is very resource heavy. So I need lots of data and GPU power.
+
+* Wikipedia and other corpuses
+
+* Hardware accelerators
+
+* After many hours or even days of training, the model will have a very good understanding of language 
+
+I then go ahead and fine tune this model for my specific tasks.
+
+* Text classification 
+
+* Named Entity Recognition
+
+* Question answering 
+
+This last step of fine tuning involves training the model with labeled data. For example, with sentiment analysis, I can provide a whole lot of text examples and label each as either positive or negative. 
+
+What's interesting is that we typically get better accuracy by starting with a pre-trained model and fine tuning it on a task such as sentiment analysis. Than if I trained a model from scratch on sentiment analysis. 
+
+## Benefits of Transfer Learning
+
+* Faster development
+
+* Less data to fine tune
+
+* Excellent results
+
+## Why Tokenization?
+
+The reason we do this is because models can only process numbers.
+
+* Words split into subwords
+
+* Subwords mapped to numerical ID's
+
+* Tokenizers convert text inputs to numerical data
+
+## Subword Tokenization Objective 
+
+* Frequently used words not split into subwords
+
+* Rarely used words decomposed into subwords
+
+## Positional Encoding 
+
+* Positional Encoding vector added to embedding vector
+
+* Tokens with similar meanings are closer
+
+## After Positional Encoding 
+
+* Tokens with similar meanings are closer
+
+* Position in sentence matters
+
+## Working with IMDB Dataset
+
+Working with IMDB Dataset: Two fields of columns 
+
+ 1. Text Column: has the review of the movie 
+
+ 2. Label Column: 1 means the movie has a positive review, 0 means the movie had a negative review
+
+ ## Additional Training Runs
+
+ 1. Increase batch size - how large can you go?
+
+ 2. Use smaller model - distilbert-base-cased
+
+ 3. Increase model accuracy by training more epochs 
